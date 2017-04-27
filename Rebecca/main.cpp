@@ -4,6 +4,8 @@
 
 #include <math.h>
 
+#include "ApplicationMaster.hpp"
+
 #define Pai 3.1415926
 
 #define WIDTH 400
@@ -24,42 +26,34 @@ void Line2D(int x1,int y1,int x2, int y2,float size){
     glEnd();
 }
 
-void Circle2D(float radius,int x,int y)
+
+
+void idle(void)
 {
-    for (float th1 = 0.0;  th1 <= 360.0;  th1 = th1 + 1.0)
-    {
-        float th2 = th1 + 10.0;
-        float th1_rad = th1 / 180.0 * Pai;
-        float th2_rad = th2 / 180.0 * Pai;
-        
-        float x1 = radius * cos(th1_rad);
-        float y1 = radius * sin(th1_rad);
-        float x2 = radius * cos(th2_rad);
-        float y2 = radius * sin(th2_rad);
-        
-        glBegin(GL_LINES);
-        glVertex2f( x1+x, y1+y );
-        glVertex2f( x2+x, y2+y );
-        glEnd();
-    }
+    glutPostRedisplay();
 }
+
+ApplicationMaster* applicationMaster = new ApplicationMaster;
 
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor4f(0.0f,0.0f,1.0f,1.0f);
-    Point(50,50,2.0);
-    glColor4f(1.0f,0.0f,0.0f,1.0f);
-    Point(250,150,10.0);
     glColor4f(0.0f,0.0f,0.0f,1.0f);
-    Line2D(20,40,200,180,1.0);
-    Circle2D(40.0f,50,50);
+    applicationMaster->disp();
     glFlush();
 }
+
 void Init(){
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glOrtho(0, WIDTH, HEIGHT, 0, -1, 1);
 }
+
+
+void timer(int value) {
+    applicationMaster->move();
+    glutTimerFunc(1000/60 , timer , 0);
+}
+
 int main(int argc, char *argv[])
 {
     glutInitWindowPosition(100, 100);
@@ -69,6 +63,8 @@ int main(int argc, char *argv[])
     glutCreateWindow("Rebecca");
     glutDisplayFunc(display);
     Init();
+    glutTimerFunc(1000 , timer , 0);
+    glutIdleFunc(idle);
     glutMainLoop();
     return 0;
 }

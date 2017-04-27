@@ -10,6 +10,7 @@
 		2D0F0F581EB1C57E009213B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F0F571EB1C57E009213B0 /* main.cpp */; };
 		2D0F0F601EB1C5CA009213B0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */; };
 		2D0F0F621EB1C5D6009213B0 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F611EB1C5D6009213B0 /* GLUT.framework */; };
+		2D29C5101EB1DBB900D7C838 /* ApplicationMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		2D0F0F571EB1C57E009213B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		2D0F0F611EB1C5D6009213B0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationMaster.cpp; sourceTree = "<group>"; };
+		2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ApplicationMaster.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				2D0F0F571EB1C57E009213B0 /* main.cpp */,
+				2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */,
+				2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */,
 			);
 			path = Rebecca;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D29C5101EB1DBB900D7C838 /* ApplicationMaster.cpp in Sources */,
 				2D0F0F581EB1C57E009213B0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +268,7 @@
 				2D0F0F5D1EB1C57E009213B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
