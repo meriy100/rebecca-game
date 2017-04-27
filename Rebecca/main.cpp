@@ -11,21 +11,6 @@
 #define WIDTH 400
 #define HEIGHT 320
 
-void Point(int x,int y,float size){
-    glPointSize(size);
-    glBegin(GL_POINTS);
-    glVertex2i(x , y);
-    glEnd();
-}
-
-void Line2D(int x1,int y1,int x2, int y2,float size){
-    glLineWidth(size);
-    glBegin(GL_LINES);
-    glVertex2i(x1,y1);
-    glVertex2i(x2,y2);
-    glEnd();
-}
-
 
 
 void idle(void)

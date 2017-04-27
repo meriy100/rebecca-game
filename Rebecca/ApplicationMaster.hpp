@@ -9,12 +9,14 @@
 #ifndef ApplicationMaster_hpp
 #define ApplicationMaster_hpp
 
-
+#include "Unit.hpp"
+#include "UnitRenderer.hpp"
 
 class ApplicationMaster {
 public:
     int x;
     int y;
+    Unit* unit;
     ApplicationMaster();
     void move();
     void disp();

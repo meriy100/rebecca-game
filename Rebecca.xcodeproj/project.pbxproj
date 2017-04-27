@@ -10,6 +10,9 @@
 		2D0F0F581EB1C57E009213B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F0F571EB1C57E009213B0 /* main.cpp */; };
 		2D0F0F601EB1C5CA009213B0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */; };
 		2D0F0F621EB1C5D6009213B0 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F611EB1C5D6009213B0 /* GLUT.framework */; };
+		2D123EC41EB1E49800375039 /* DrawFuncs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D123EC21EB1E49800375039 /* DrawFuncs.cpp */; };
+		2D123EC91EB1E56400375039 /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D123EC71EB1E56400375039 /* Unit.cpp */; };
+		2D123ECD1EB1E7A100375039 /* UnitRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D123ECB1EB1E7A100375039 /* UnitRenderer.cpp */; };
 		2D29C5101EB1DBB900D7C838 /* ApplicationMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,12 @@
 		2D0F0F571EB1C57E009213B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		2D0F0F611EB1C5D6009213B0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		2D123EC21EB1E49800375039 /* DrawFuncs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DrawFuncs.cpp; path = lib/DrawFuncs.cpp; sourceTree = "<group>"; };
+		2D123EC31EB1E49800375039 /* DrawFuncs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DrawFuncs.hpp; path = lib/DrawFuncs.hpp; sourceTree = "<group>"; };
+		2D123EC71EB1E56400375039 /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unit.cpp; sourceTree = "<group>"; };
+		2D123EC81EB1E56400375039 /* Unit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Unit.hpp; sourceTree = "<group>"; };
+		2D123ECB1EB1E7A100375039 /* UnitRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitRenderer.cpp; sourceTree = "<group>"; };
+		2D123ECC1EB1E7A100375039 /* UnitRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UnitRenderer.hpp; sourceTree = "<group>"; };
 		2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationMaster.cpp; sourceTree = "<group>"; };
 		2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ApplicationMaster.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +76,9 @@
 		2D0F0F561EB1C57E009213B0 /* Rebecca */ = {
 			isa = PBXGroup;
 			children = (
+				2D123ECA1EB1E72D00375039 /* Renderer */,
+				2D123EC61EB1E54B00375039 /* Models */,
+				2D123EC51EB1E4AE00375039 /* lib */,
 				2D0F0F571EB1C57E009213B0 /* main.cpp */,
 				2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */,
 				2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */,
@@ -81,6 +93,33 @@
 				2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D123EC51EB1E4AE00375039 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2D123EC21EB1E49800375039 /* DrawFuncs.cpp */,
+				2D123EC31EB1E49800375039 /* DrawFuncs.hpp */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		2D123EC61EB1E54B00375039 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D123EC71EB1E56400375039 /* Unit.cpp */,
+				2D123EC81EB1E56400375039 /* Unit.hpp */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2D123ECA1EB1E72D00375039 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				2D123ECB1EB1E7A100375039 /* UnitRenderer.cpp */,
+				2D123ECC1EB1E7A100375039 /* UnitRenderer.hpp */,
+			);
+			name = Renderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D29C5101EB1DBB900D7C838 /* ApplicationMaster.cpp in Sources */,
+				2D123EC91EB1E56400375039 /* Unit.cpp in Sources */,
+				2D123ECD1EB1E7A100375039 /* UnitRenderer.cpp in Sources */,
+				2D123EC41EB1E49800375039 /* DrawFuncs.cpp in Sources */,
 				2D0F0F581EB1C57E009213B0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
