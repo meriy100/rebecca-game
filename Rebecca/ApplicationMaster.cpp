@@ -12,7 +12,7 @@ ApplicationMaster::ApplicationMaster() {
     }
     time_count = 0;
     std::random_device rd;
-    std::mt19937 mt(rd());
+    //std::mt19937 mt(rd());
 }
 
 void ApplicationMaster::perform() {
@@ -30,6 +30,6 @@ void ApplicationMaster::disp() {
 }
 
 int ApplicationMaster::random() {
-    return mt();
+    return rd();
     
 }

@@ -5,7 +5,7 @@
 
 #include <math.h>
 #include <iostream>
-#define Pai 3.1415926
+#include "defines.h"
 
 void Circle2D(float radius,int x,int y)
 {

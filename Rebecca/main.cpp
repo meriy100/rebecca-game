@@ -5,11 +5,7 @@
 #include <math.h>
 
 #include "ApplicationMaster.hpp"
-
-#define Pai 3.1415926
-
-#define WIDTH 400
-#define HEIGHT 320
+#include "defines.h"
 
 
 
@@ -36,12 +32,12 @@ void Init(){
 
 void timer(int value) {
     applicationMaster->perform();
-    glutTimerFunc(1000/60 , timer , 0);
+    glutTimerFunc(WAIT_TIME, timer , 0);
 }
 
 int main(int argc, char *argv[])
 {
-    glutInitWindowPosition(100, 100);
+    glutInitWindowPosition(POSITION_X, POSITION_Y);
     glutInitWindowSize(WIDTH, HEIGHT);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGBA);

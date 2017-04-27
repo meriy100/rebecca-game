@@ -17,5 +17,5 @@ UnitRenderer::UnitRenderer(Unit* m_unit) {
 }
 
 void UnitRenderer::render() {
-    Circle2DFill(10, unit->x, unit->y);
+    Circle2DFill(unit->r, unit->x, unit->y);
 }

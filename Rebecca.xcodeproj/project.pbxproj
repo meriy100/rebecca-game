@@ -41,6 +41,7 @@
 		2D123ECC1EB1E7A100375039 /* UnitRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UnitRenderer.hpp; sourceTree = "<group>"; };
 		2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationMaster.cpp; sourceTree = "<group>"; };
 		2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ApplicationMaster.hpp; sourceTree = "<group>"; };
+		2D8F77F91EB2333200D3DFF8 /* defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 				2D0F0F571EB1C57E009213B0 /* main.cpp */,
 				2D29C50E1EB1DBB900D7C838 /* ApplicationMaster.cpp */,
 				2D29C50F1EB1DBB900D7C838 /* ApplicationMaster.hpp */,
+				2D8F77F91EB2333200D3DFF8 /* defines.h */,
 			);
 			path = Rebecca;
 			sourceTree = "<group>";

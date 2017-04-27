@@ -6,11 +6,11 @@
 class Unit;
 class ApplicationMaster {
     std::random_device rd;
+    //std::mt19937 mt;
 public:
     int time_count;
     Unit* unit[4];
     std::list<Unit*> units;
-    std::mt19937 mt;
     ApplicationMaster();
     void perform();
     void disp();
