@@ -8,7 +8,7 @@
 
 ApplicationMaster::ApplicationMaster() {
     for(int i = 0; i < 4; i++) {
-        unit[i] = new Unit;
+        units.push_back(new Unit);
     }
     time_count = 0;
     std::random_device rd;
@@ -17,14 +17,14 @@ ApplicationMaster::ApplicationMaster() {
 
 void ApplicationMaster::perform() {
     time_count++;
-    for(int i = 0; i<4; i++) {
-        unit[i]->perform(this);
+    for(auto itr = units.begin(); itr != units.end(); ++itr) {
+        (*itr)->perform(this);
     }
 }
 void ApplicationMaster::disp() {
     UnitRenderer* renderer;
-    for(int i = 0; i<4; i++) {
-        renderer = new UnitRenderer(unit[i]);
+    for(auto itr = units.begin(); itr != units.end(); ++itr) {
+        renderer = new UnitRenderer(*itr);
         renderer->render();
     }
 }
