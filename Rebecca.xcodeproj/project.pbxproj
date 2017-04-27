@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D0F0F581EB1C57E009213B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F0F571EB1C57E009213B0 /* main.cpp */; };
+		2D0F0F601EB1C5CA009213B0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */; };
+		2D0F0F621EB1C5D6009213B0 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0F0F611EB1C5D6009213B0 /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		2D0F0F541EB1C57E009213B0 /* Rebecca */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rebecca; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0F0F571EB1C57E009213B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2D0F0F611EB1C5D6009213B0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0F0F621EB1C5D6009213B0 /* GLUT.framework in Frameworks */,
+				2D0F0F601EB1C5CA009213B0 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				2D0F0F561EB1C57E009213B0 /* Rebecca */,
 				2D0F0F551EB1C57E009213B0 /* Products */,
+				2D0F0F5E1EB1C5CA009213B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,15 @@
 				2D0F0F571EB1C57E009213B0 /* main.cpp */,
 			);
 			path = Rebecca;
+			sourceTree = "<group>";
+		};
+		2D0F0F5E1EB1C5CA009213B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D0F0F611EB1C5D6009213B0 /* GLUT.framework */,
+				2D0F0F5F1EB1C5CA009213B0 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
