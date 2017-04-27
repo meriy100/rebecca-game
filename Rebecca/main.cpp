@@ -35,7 +35,7 @@ void Init(){
 
 
 void timer(int value) {
-    applicationMaster->move();
+    applicationMaster->perform();
     glutTimerFunc(1000/60 , timer , 0);
 }
 

@@ -9,6 +9,7 @@
 #include "UnitRenderer.hpp"
 
 #include "DrawFuncs.hpp"
+#include "Unit.hpp"
 
 
 UnitRenderer::UnitRenderer(Unit* m_unit) {

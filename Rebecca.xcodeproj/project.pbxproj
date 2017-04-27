@@ -76,7 +76,7 @@
 		2D0F0F561EB1C57E009213B0 /* Rebecca */ = {
 			isa = PBXGroup;
 			children = (
-				2D123ECA1EB1E72D00375039 /* Renderer */,
+				2D123ECA1EB1E72D00375039 /* Renderers */,
 				2D123EC61EB1E54B00375039 /* Models */,
 				2D123EC51EB1E4AE00375039 /* lib */,
 				2D0F0F571EB1C57E009213B0 /* main.cpp */,
@@ -113,13 +113,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		2D123ECA1EB1E72D00375039 /* Renderer */ = {
+		2D123ECA1EB1E72D00375039 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
 				2D123ECB1EB1E7A100375039 /* UnitRenderer.cpp */,
 				2D123ECC1EB1E7A100375039 /* UnitRenderer.hpp */,
 			);
-			name = Renderer;
+			name = Renderers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

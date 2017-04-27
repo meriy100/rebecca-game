@@ -1,25 +1,19 @@
-//
-//  ApplicationMaster.hpp
-//  Rebecca
-//
-//  Created by 苅宿航太 on 2017/04/27.
-//  Copyright © 2017年 meriy100. All rights reserved.
-//
-
 #ifndef ApplicationMaster_hpp
 #define ApplicationMaster_hpp
 
-#include "Unit.hpp"
-#include "UnitRenderer.hpp"
+#include <random>
 
+class Unit;
 class ApplicationMaster {
+    std::random_device rd;
 public:
-    int x;
-    int y;
-    Unit* unit;
+    int time_count;
+    Unit* unit[4];
+    std::mt19937 mt;
     ApplicationMaster();
-    void move();
+    void perform();
     void disp();
+    int random();
 };
 
 

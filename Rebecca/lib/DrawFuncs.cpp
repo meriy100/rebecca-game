@@ -1,11 +1,3 @@
-//
-//  DrawFuncs.cpp
-//  Rebecca
-//
-//  Created by 苅宿航太 on 2017/04/27.
-//  Copyright © 2017年 meriy100. All rights reserved.
-//
-
 #include "DrawFuncs.hpp"
 
 #include <OpenGL/OpenGL.h>

@@ -1,27 +1,35 @@
-//
-//  ApplicationMaster.cpp
-//  Rebecca
-//
-//  Created by 苅宿航太 on 2017/04/27.
-//  Copyright © 2017年 meriy100. All rights reserved.
-//
-
 #include "ApplicationMaster.hpp"
 #include <iostream>
 
 #include "DrawFuncs.hpp"
 
+#include "Unit.hpp"
+#include "UnitRenderer.hpp"
 
 ApplicationMaster::ApplicationMaster() {
-    x = 10;
-    y = 10;
-    unit = new Unit;
+    for(int i = 0; i < 4; i++) {
+        unit[i] = new Unit;
+    }
+    time_count = 0;
+    std::random_device rd;
+    std::mt19937 mt(rd());
 }
 
-void ApplicationMaster::move() {
-    unit->perform();
+void ApplicationMaster::perform() {
+    time_count++;
+    for(int i = 0; i<4; i++) {
+        unit[i]->perform(this);
+    }
 }
 void ApplicationMaster::disp() {
-    UnitRenderer* renderer = new UnitRenderer(unit);
-    renderer->render();
+    UnitRenderer* renderer;
+    for(int i = 0; i<4; i++) {
+        renderer = new UnitRenderer(unit[i]);
+        renderer->render();
+    }
+}
+
+int ApplicationMaster::random() {
+    return mt();
+    
 }

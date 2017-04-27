@@ -1,21 +1,17 @@
-//
-//  Unit.hpp
-//  Rebecca
-//
-//  Created by 苅宿航太 on 2017/04/27.
-//  Copyright © 2017年 meriy100. All rights reserved.
-//
-
 #ifndef Unit_hpp
 #define Unit_hpp
 
+#include <math.h>
+class ApplicationMaster;
 class Unit {
 public:
-    int x;
-    int y;
+    float x;
+    float y;
+    float v;
+    float direction;
     
     Unit();
-    void perform();
+    void perform(ApplicationMaster* applicationMaster);
 };
 
 #endif /* Unit_hpp */

@@ -10,8 +10,7 @@
 #define UnitRenderer_hpp
 
 #include <stdio.h>
-#include "Unit.hpp"
-
+class Unit;
 class UnitRenderer {
 public:
     Unit* unit;
