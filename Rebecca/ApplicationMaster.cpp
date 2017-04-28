@@ -40,8 +40,12 @@ void ApplicationMaster::perform(Mouse mouse) {
   if (mouse.left == 1) {
     units.push_back(new Unit(mouse.x, mouse.y, 4.0f, random() % 360));
   }
-  for(auto itr = units.begin(); itr != units.end(); ++itr) {
+  for(auto itr = units.begin(); itr != units.end();) {
     (*itr)->perform(this);
+    if (!(*itr)->isAlive()) {
+      units.erase(itr);
+    }
+    ++itr;
   }
 }
 

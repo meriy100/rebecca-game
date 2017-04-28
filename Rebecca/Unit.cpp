@@ -11,14 +11,26 @@ Unit::Unit(float m_x, float m_y, float m_r, float m_direction) {
   v = 2.0f;
   r = m_r;
   direction = m_direction;
+  nutrition = 100;
+  alive = true;
 }
 
 void Unit::perform(ApplicationMaster* applicationMaster) {
+  nutrition -= 2;
+  if ( nutrition < 0) {
+    alive = false;
+    return;
+  }
   if (applicationMaster->tile[(int)(x / 10)][(int)(y / 10)] > 0) {
     v = 0.f;
-    applicationMaster->tile[(int)(x / 10)][(int)(y / 10)]--;
+    absorption(&applicationMaster->tile[(int)(x / 10)][(int)(y / 10)]);
   } else {
     v = 2.0f;
+  }
+
+  if (nutrition > 200) {
+    nutrition -= 100;
+    applicationMaster->units.push_back(birth());
   }
 
   float vx = v * cos(direction / 180.0 * Pai);
@@ -48,4 +60,17 @@ float Unit::wallCollision(float vx, float vy) {
     return 360 - direction;
   }
   return direction;
+}
+
+bool Unit::isAlive() {
+  return alive;
+}
+
+void Unit::absorption(int* tile) {
+  *tile -= 10;
+  nutrition += 10;
+}
+
+Unit* Unit::birth() {
+  return new Unit(x, y, r, direction);
 }

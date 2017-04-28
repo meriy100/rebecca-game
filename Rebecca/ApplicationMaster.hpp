@@ -10,7 +10,6 @@ class ApplicationMaster {
   //std::mt19937 mt;
   public:
   int time_count;
-  Unit* unit[4];
   int tile[120][80];
   std::list<Unit*> units;
   ApplicationMaster();
