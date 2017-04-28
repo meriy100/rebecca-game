@@ -3,6 +3,7 @@
 
 #include <random>
 #include <list>
+#include "defines.h"
 class Unit;
 class ApplicationMaster {
   std::random_device rd;
@@ -13,7 +14,7 @@ class ApplicationMaster {
   int tile[120][80];
   std::list<Unit*> units;
   ApplicationMaster();
-  void perform();
+  void perform(Mouse);
   void disp();
   int random();
 };

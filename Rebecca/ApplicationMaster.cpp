@@ -15,8 +15,15 @@ int nolumn(int value) {
 }
 
 ApplicationMaster::ApplicationMaster() {
-  for(int i = 0; i < 400; i++) {
-    units.push_back(new Unit(nolumn(random() % WIDTH), nolumn(random() % HEIGHT), 4.0f));
+  for(int i = 0; i < 10; i++) {
+    units.push_back(
+      new Unit(
+        nolumn(random() % WIDTH),
+        nolumn(random() % HEIGHT),
+        4.0f,
+        random() % 360
+      )
+    );
   }
   time_count = 0;
   std::random_device rd;
@@ -28,12 +35,16 @@ ApplicationMaster::ApplicationMaster() {
   //std::mt19937 mt(rd()); // TODO
 }
 
-void ApplicationMaster::perform() {
+void ApplicationMaster::perform(Mouse mouse) {
   time_count++;
+  if (mouse.left == 1) {
+    units.push_back(new Unit(mouse.x, mouse.y, 4.0f, random() % 360));
+  }
   for(auto itr = units.begin(); itr != units.end(); ++itr) {
     (*itr)->perform(this);
   }
 }
+
 void ApplicationMaster::disp() {
   for(int x = 0; x < 120; x++) {
     for(int y = 0; y < 80; y++) {

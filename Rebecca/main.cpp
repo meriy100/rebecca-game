@@ -30,9 +30,17 @@ void Init(){
 
 
 void timer(int value) {
-  std::cout << mouse.left << std::endl;
-  printf("x: %d, y: %d\n", mouse.x, mouse.y);
-  applicationMaster->perform();
+  printf("left : %d\n", mouse.left);
+  applicationMaster->perform(mouse);
+  if(mouse.left > 0) {
+    mouse.left++;
+  }
+  if(mouse.right > 0) {
+    mouse.right++;
+  }
+  if(mouse.middle > 0) {
+    mouse.middle++;
+  }
   glutTimerFunc(WAIT_TIME, timer , 0);
 }
 
@@ -42,24 +50,24 @@ void mouseClick(int button, int state, int x, int y)
 {
   if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
   {
-    mouse.left = true;
+    mouse.left = 1;
   }else if(button == GLUT_LEFT_BUTTON && state == GLUT_UP)
   {
-    mouse.left = false;
+    mouse.left = 0;
   }
   if(button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
   {
-    mouse.right = true;
+    mouse.right = 1;
   }else if(button == GLUT_RIGHT_BUTTON && state == GLUT_UP)
   {
-    mouse.right = false;
+    mouse.right = 0;
   }
   if(button == GLUT_MIDDLE_BUTTON && state == GLUT_DOWN)
   {
-    mouse.middle = true;
+    mouse.middle = 1;
   }else if(button == GLUT_MIDDLE_BUTTON && state == GLUT_UP)
   {
-    mouse.middle = false;
+    mouse.middle = 0;
   }
 }
 

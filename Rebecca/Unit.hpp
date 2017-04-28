@@ -11,8 +11,8 @@ public:
     float v;
     float r;
     float direction;
-    
-    Unit(float, float, float);
+
+    Unit(float, float, float, float);
     void perform(ApplicationMaster* applicationMaster);
     float wallCollision(float nextx, float nexty);
 };

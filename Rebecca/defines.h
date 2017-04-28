@@ -21,9 +21,9 @@
 struct Mouse {
   int x;
   int y;
-  bool left;
-  bool right;
-  bool middle;
+  int left;
+  int right;
+  int middle;
 };
 
 #endif /* defines_h */

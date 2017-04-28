@@ -5,12 +5,12 @@
 #include <random>
 #include "ApplicationMaster.hpp"
 
-Unit::Unit(float m_x, float m_y, float m_r) {
+Unit::Unit(float m_x, float m_y, float m_r, float m_direction) {
   x = m_x;
   y = m_y;
   v = 2.0f;
   r = m_r;
-  direction = 0.0f;
+  direction = m_direction;
 }
 
 void Unit::perform(ApplicationMaster* applicationMaster) {
