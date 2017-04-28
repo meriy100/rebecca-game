@@ -10,16 +10,19 @@
 #include <OpenGL/OpenGL.h>
 #include <GLUT/GLUT.h>
 
+int nolumn(int value) {
+    return value < 0 ? (0 - value) : value;
+}
 
 ApplicationMaster::ApplicationMaster() {
-    for(int i = 0; i < 4; i++) {
-        units.push_back(new Unit);
+    for(int i = 0; i < 400; i++) {
+        units.push_back(new Unit(nolumn(random() % WIDTH), nolumn(random() % HEIGHT), 4.0f));
     }
     time_count = 0;
     std::random_device rd;
     for(int x = 0; x < 120; x++) {
         for(int y = 0; y < 80; y++) {
-            tile[x][y] = (rd() % 100) / 10.0f ;
+            tile[x][y] = nolumn(rd() % 100);
         }
     }
     //std::mt19937 mt(rd()); // TODO
@@ -34,7 +37,11 @@ void ApplicationMaster::perform() {
 void ApplicationMaster::disp() {
     for(int x = 0; x < 120; x++) {
         for(int y = 0; y < 80; y++) {
-            glColor4f(tile[x][y] / 10.0f, 1.0f, tile[x][y] / 10.0f, 1.0f);
+            glColor4f(
+                      (100 - tile[x][y]) / 100.0f,
+                      1.0f,
+                      (100 - tile[x][y])/ 100.0f,
+                      1.0f);
             SquareFill2D(x * 10, y * 10, x * 10 + 10, y * 10 + 10);
         }
     }

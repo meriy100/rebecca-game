@@ -12,7 +12,7 @@ public:
     float r;
     float direction;
     
-    Unit();
+    Unit(float, float, float);
     void perform(ApplicationMaster* applicationMaster);
     float wallCollision(float nextx, float nexty);
 };

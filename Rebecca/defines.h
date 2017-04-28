@@ -13,9 +13,17 @@
 
 #define WIDTH 1200
 #define HEIGHT 800
+
 #define POSITION_X 200
 #define POSITION_Y 200
 #define WAIT_TIME 1000/60
 
+struct Mouse {
+    int x;
+    int y;
+    bool left;
+    bool right;
+    bool middle;
+};
 
 #endif /* defines_h */
