@@ -15,7 +15,7 @@ int nolumn(int value) {
 }
 
 ApplicationMaster::ApplicationMaster() {
-  for(int i = 0; i < 10; i++) {
+  for(int i = 0; i < 1; i++) {
     units.push_back(
       new Unit(
         nolumn(random() % WIDTH),
@@ -27,8 +27,8 @@ ApplicationMaster::ApplicationMaster() {
   }
   time_count = 0;
   std::random_device rd;
-  for(int x = 0; x < 120; x++) {
-    for(int y = 0; y < 80; y++) {
+  for(int x = 0; x < MAP_WIDTH; x++) {
+    for(int y = 0; y < MAP_HEIGHT; y++) {
       tile[x][y] = nolumn(rd() % 100);
     }
   }
@@ -43,6 +43,16 @@ void ApplicationMaster::perform(Mouse mouse) {
   for(auto itr = units.begin(); itr != units.end();) {
     (*itr)->perform(this);
     if (!(*itr)->isAlive()) {
+      printf("%d %d\n", (int)(*itr)->x / 10, (int)(*itr)->y / 10);
+      // TODO
+      int tilex = (int)(*itr)->x / 10;
+      int tiley = (int)(*itr)->y / 10;
+      if (tilex > 10 && tiley > 10 && tilex < MAP_WIDTH - 5 && tiley < MAP_HEIGHT - 5 ) {
+        for(int x = tilex - 5; x < tilex + 5; x++ )
+          for(int y = tiley - 5; y < tiley + 5; y++ )
+            if (tilex >= 0 && tilex < MAP_WIDTH && tiley >= 0 && tiley < MAP_HEIGHT)
+              tile[x][y] += 10;
+      }
       units.erase(itr);
     }
     ++itr;
@@ -66,7 +76,7 @@ void ApplicationMaster::disp() {
     renderer->render();
   }
   std::stringstream value;
-  value << units.size();
+  value << "Unit" << units.size();
   PrintString(value, WIDTH - 80, HEIGHT - 80);
 }
 

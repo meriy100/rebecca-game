@@ -29,7 +29,7 @@ void Unit::perform(ApplicationMaster* applicationMaster) {
   }
 
   if (nutrition > 200) {
-    nutrition -= 100;
+    nutrition -= 10;
     applicationMaster->units.push_back(birth());
   }
 
@@ -67,8 +67,9 @@ bool Unit::isAlive() {
 }
 
 void Unit::absorption(int* tile) {
-  *tile -= 10;
-  nutrition += 10;
+  int value = *tile < 10 ? *tile : 10;
+  *tile -= value;
+  nutrition += value;
 }
 
 Unit* Unit::birth() {

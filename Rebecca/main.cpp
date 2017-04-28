@@ -30,7 +30,6 @@ void Init(){
 
 
 void timer(int value) {
-  printf("left : %d\n", mouse.left);
   applicationMaster->perform(mouse);
   if(mouse.left > 0) {
     mouse.left++;
