@@ -19,11 +19,11 @@
 #define WAIT_TIME 1000/60
 
 struct Mouse {
-    int x;
-    int y;
-    bool left;
-    bool right;
-    bool middle;
+  int x;
+  int y;
+  bool left;
+  bool right;
+  bool middle;
 };
 
 #endif /* defines_h */
