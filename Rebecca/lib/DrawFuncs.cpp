@@ -14,7 +14,7 @@ void Circle2D(float radius,int x,int y)
         float th2 = th1 + 10.0;
         float th1_rad = th1 / 180.0 * Pai;
         float th2_rad = th2 / 180.0 * Pai;
-        
+
         float x1 = radius * cos(th1_rad);
         float y1 = radius * sin(th1_rad);
         float x2 = radius * cos(th2_rad);
@@ -49,18 +49,18 @@ void Circle2DFill(float radius,int x,int y)
         float th2 = th1 + 10.0;
         float th1_rad = th1 / 180.0 * Pai;
         float th2_rad = th2 / 180.0 * Pai;
-        
+
         float x1 = radius * cos(th1_rad);
         float y1 = radius * sin(th1_rad);
         float x2 = radius * cos(th2_rad);
         float y2 = radius * sin(th2_rad);
-        
+
         glBegin(GL_TRIANGLES);
         glVertex2f( x, y );
         glVertex2f( x1+x, y1+y );
         glVertex2f( x2+x, y2+y );
         glEnd();
-    } 
+    }
 }
 
 void SquareFill2D(int x1,int y1,int x2, int y2){
@@ -70,4 +70,14 @@ void SquareFill2D(int x1,int y1,int x2, int y2){
     glVertex2i(x2,y2);
     glVertex2i(x1,y2);
     glEnd();
+}
+
+void PrintString(std::stringstream& str, int x, int y) {
+  void *font = GLUT_BITMAP_HELVETICA_18;
+  char ch;
+  glRasterPos2d(x, y);
+  for(int i = 0; i < str.str().length(); i++){
+    str.get(ch);
+    glutBitmapCharacter(font, ch);
+  }
 }

@@ -65,6 +65,9 @@ void ApplicationMaster::disp() {
     renderer = new UnitRenderer(*itr);
     renderer->render();
   }
+  std::stringstream value;
+  value << units.size();
+  PrintString(value, WIDTH - 80, HEIGHT - 80);
 }
 
 int ApplicationMaster::random() {
