@@ -11,8 +11,8 @@
 
 #define Pai 3.1415926
 
-#define WIDTH 400
-#define HEIGHT 320
+#define WIDTH 1200
+#define HEIGHT 800
 #define POSITION_X 200
 #define POSITION_Y 200
 #define WAIT_TIME 1000/60

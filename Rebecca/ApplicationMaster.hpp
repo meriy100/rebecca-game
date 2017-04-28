@@ -10,6 +10,7 @@ class ApplicationMaster {
 public:
     int time_count;
     Unit* unit[4];
+    float tile[120][80];
     std::list<Unit*> units;
     ApplicationMaster();
     void perform();

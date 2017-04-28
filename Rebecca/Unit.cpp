@@ -10,7 +10,7 @@ Unit::Unit() {
     x = 50.0f;
     y = 50.0f;
     v = 5.0f;
-    r = 10;
+    r = 4;
     direction = 0.0;
 }
 
